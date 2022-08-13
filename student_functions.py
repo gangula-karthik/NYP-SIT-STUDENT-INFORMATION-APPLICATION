@@ -40,19 +40,12 @@ def updateStudent(admin_No_Updater):
 
 def removeStudent(admin_no_remover):
     global studentDatabase
-    if admin_no_remover in studentDatabase:
-        print(f"Admission number: {admin_no_remover}")
-        print(f"Student name: {studentDatabase[admin_no_remover][0]}")
-        print(f"Module name: {studentDatabase[admin_no_remover][1]}")
-        print(f"score: {studentDatabase[admin_no_remover][2]}")
-        remove_confirmation = input("Is this the student you want to remove? (Yes/No): ")
-        if remove_confirmation.lower() == "yes":
-            del studentDatabase[admin_no_remover]
-            return "student information removed!"
-        elif remove_confirmation.lower() == "no":
-            return "student information was not removed!"
-    elif admin_no_remover not in studentDatabase:
-        return "Student not found"
+    remove_confirmation = input("Is this the student you want to remove? (Yes/No): ")
+    if remove_confirmation.lower() == "yes":
+        del studentDatabase[admin_no_remover]
+        return "student information removed!"
+    elif remove_confirmation.lower() == "no":
+        return "student information was not removed!"
 
 
 def getStudents(students):

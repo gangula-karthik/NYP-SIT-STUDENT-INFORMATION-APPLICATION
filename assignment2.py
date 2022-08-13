@@ -53,9 +53,7 @@ Enter 2 to Update module name
 Enter 3 to Update score
 Enter 0 to return to main menu 
             """)
-            
             print(updateStudent(admin_No_Updater))
-
         else:
             print(adminExists(admin_No_Updater))
 
@@ -63,6 +61,11 @@ Enter 0 to return to main menu
     elif choice == 3: 
         print("== Remove student ==")
         admin_no_remover = input("Please enter the admission number you would like to remove: ")
+        if adminExists(admin_no_remover) == True:
+            print(f"Admission number: {admin_no_remover}")
+            print(f"Student name: {studentDatabase[admin_no_remover][0]}")
+            print(f"Module name: {studentDatabase[admin_no_remover][1]}")
+            print(f"score: {studentDatabase[admin_no_remover][2]}")
 
         print(removeStudent(admin_no_remover))
 
