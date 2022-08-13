@@ -1,3 +1,5 @@
+import sys 
+
 studentDatabase = {}
 
 def addStudent(admissionNumber, studentName, moduleName, score):
@@ -6,20 +8,20 @@ def addStudent(admissionNumber, studentName, moduleName, score):
     return "Student added!"
 
 
+
+# need to check if the admin number is in the database
+def adminExists(admin_no):
+    global studentDatabase
+    if admin_no in studentDatabase:
+        return True
+    elif admin_no not in studentDatabase:
+        return "No student with this admission number was found"
+
 def updateStudent(admin_No_Updater):
     global studentDatabase
-    if admin_No_Updater in studentDatabase: 
-        print(f"Admission number: {admin_No_Updater}")
-        print(f"Student name: {studentDatabase[admin_No_Updater][0]}")
-        print(f"Module name: {studentDatabase[admin_No_Updater][1]}")
-        print(f"score: {studentDatabase[admin_No_Updater][2]}")
-        print("Student exists !")
-        print("""
-        Enter 1 to Update name
-        Enter 2 to Update module name
-        Enter 3 to Update score
-        Enter 0 to return to main menu 
-        """)
+    if len(studentDatabase) == 0:
+        return "There is currently no student information in the system"
+    else:
         updater = int(input("What would you like to update? "))
         if updater == 1: 
             new_name_student = input("Enter the new student name: ")
@@ -35,10 +37,6 @@ def updateStudent(admin_No_Updater):
             return "Score updated!"
         elif updater == 0:
             return ""
-    elif len(studentDatabase) == 0:
-        return "There is nothing in the student database"
-    elif admin_No_Updater not in studentDatabase:
-        return "The admission number does not exist in the system"
 
 
 def removeStudent(admin_no_remover):

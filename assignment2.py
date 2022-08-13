@@ -41,8 +41,24 @@ while True:
     elif choice == 2: 
         print("== Update student ==")
         admin_No_Updater = input("Please enter the admission number of the student you would like to update: ")
-        if updateStudent(admin_No_Updater) != None:
-            print(updateStudent(admin_No_Updater))
+        if adminExists(admin_No_Updater) == True:
+            print(f"Admission number: {admin_No_Updater}")
+            print(f"Student name: {studentDatabase[admin_No_Updater][0]}")
+            print(f"Module name: {studentDatabase[admin_No_Updater][1]}")
+            print(f"score: {studentDatabase[admin_No_Updater][2]}")
+            print("Student exists !")
+            print("""
+Enter 1 to Update name
+Enter 2 to Update module name
+Enter 3 to Update score
+Enter 0 to return to main menu 
+            """)
+            if updateStudent(admin_No_Updater) != None:
+                print(updateStudent(admin_No_Updater))
+
+
+        elif adminExists(admin_No_Updater) == False:
+            print("The admission number does not exist in the system")
 
 
     elif choice == 3: 
