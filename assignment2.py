@@ -22,7 +22,7 @@ Enter 4 to Display all student information in the system
 Enter 5 to Search for the student(s)
 Enter -1 to Exit the application 
     """)
-
+gfdohi
 while True:
 
     mainMenu()
