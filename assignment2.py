@@ -53,11 +53,11 @@ Enter 2 to Update module name
 Enter 3 to Update score
 Enter 0 to return to main menu 
             """)
-            if updateStudent(admin_No_Updater) != None:
-                print(updateStudent(admin_No_Updater))
+            
+            print(updateStudent(admin_No_Updater))
 
-
-        print(adminExists(admin_No_Updater))
+        else:
+            print(adminExists(admin_No_Updater))
 
 
     elif choice == 3: 

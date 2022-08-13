@@ -14,7 +14,8 @@ def adminExists(admin_no):
     if admin_no in studentDatabase:
         return True
     elif admin_no not in studentDatabase:
-        return "No such student found"
+        return "No such student found."
+
 
 def updateStudent(admin_No_Updater):
     global studentDatabase
