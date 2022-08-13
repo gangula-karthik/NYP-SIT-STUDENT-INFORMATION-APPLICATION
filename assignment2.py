@@ -57,8 +57,7 @@ Enter 0 to return to main menu
                 print(updateStudent(admin_No_Updater))
 
 
-        elif adminExists(admin_No_Updater) == False:
-            print("The admission number does not exist in the system")
+        print(adminExists(admin_No_Updater))
 
 
     elif choice == 3: 

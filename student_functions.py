@@ -11,7 +11,6 @@ def addStudent(admissionNumber, studentName, moduleName, score):
 
 # need to check if the admin number is in the database
 def adminExists(admin_no):
-    global studentDatabase
     if admin_no in studentDatabase:
         return True
     elif admin_no not in studentDatabase:
